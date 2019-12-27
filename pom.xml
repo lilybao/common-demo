@@ -12,6 +12,8 @@
         <module>design-mode</module>
         <module>spring-demo</module>
         <module>leetcode-demo</module>
+        <module>mixin-demo</module>
+        <module>multithread-demo</module>
     </modules>
     <dependencies>
         <dependency>
