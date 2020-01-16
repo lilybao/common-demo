@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: dubbo-zookeeper-consumer
+api:
+  service:
+    version: 1.0.0 #远程调用服务版本
+
+embeded:
+  zookeeper:
+    port: 2181 #zookeeper端口
+dubbo:
+  registry:
+    address: zookeeper://192.168.0.161:${embeded.zookeeper.port} #服务注册中心地址
+    file: ${user.home}/dubbo-cache/${embeded.zookeeper.port}/dubbo.cache  #dubbo缓存本地地址
+server:
+  port: 8081

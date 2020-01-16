@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: dubbo-consumer
+api:
+  service:
+    version: 1.0.0 #  apiService version  当前服务的版本号
+    url: dubbo://localhost:12355
+#dubbo:
+#  registry:
+#    address:

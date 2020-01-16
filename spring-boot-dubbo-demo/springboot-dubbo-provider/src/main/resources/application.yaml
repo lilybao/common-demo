@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: dubbo-provider
+dubbo:
+  protocol:
+    port: 12355     #协议端口号
+    name: dubbo  #协议名称
+  registry:
+    address:
+  # address: N/A  # dubbo Registry 注册方式   N/A 本地模式
+  scan:
+    base-packages: com.baoli.springboot.dubbo.service   #base packages to scan dubbo component  dubbo 服务提供类扫描包地址
+
+api:
+  service:
+    version: 1.0.0 #  apiService version  当前服务的版本号

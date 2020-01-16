@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: dubbo-zookeeper-provider
+dubbo:
+  registry:
+    address: zookeeper://192.168.0.161:2181
+  scan:
+    base-packages: com.baoli.springboot.dubbo.zookeeper.service
+
+api:
+  service:
+    version: 1.0.0
