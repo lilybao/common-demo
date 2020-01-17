@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-security-oauth2-sso/app1/app1.iml" filepath="$PROJECT_DIR$/spring-security-oauth2-sso/app1/app1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-security-oauth2-sso/app2/app2.iml" filepath="$PROJECT_DIR$/spring-security-oauth2-sso/app2/app2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-demo.iml" filepath="$PROJECT_DIR$/common-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/design-mode/design-mode.iml" filepath="$PROJECT_DIR$/design-mode/design-mode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leetcode-demo/leetcode-demo.iml" filepath="$PROJECT_DIR$/leetcode-demo/leetcode-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mixin-demo/mixin-demo.iml" filepath="$PROJECT_DIR$/mixin-demo/mixin-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/multithread-demo/multithread-demo.iml" filepath="$PROJECT_DIR$/multithread-demo/multithread-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth2-demo/oauth2-demo.iml" filepath="$PROJECT_DIR$/oauth2-demo/oauth2-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-security-oauth2-sso/oauth2-sso/oauth2-sso.iml" filepath="$PROJECT_DIR$/spring-security-oauth2-sso/oauth2-sso/oauth2-sso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-dubbo-demo/spring-boot-dubbo-demo.iml" filepath="$PROJECT_DIR$/spring-boot-dubbo-demo/spring-boot-dubbo-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-gateway-demo/spring-boot-gateway-demo.iml" filepath="$PROJECT_DIR$/spring-boot-gateway-demo/spring-boot-gateway-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-demo/spring-demo.iml" filepath="$PROJECT_DIR$/spring-demo/spring-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-security-oauth2-sso/spring-security-oauth2-sso.iml" filepath="$PROJECT_DIR$/spring-security-oauth2-sso/spring-security-oauth2-sso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-dubbo-demo/springboot-dubbo-api/springboot-dubbo-api.iml" filepath="$PROJECT_DIR$/spring-boot-dubbo-demo/springboot-dubbo-api/springboot-dubbo-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-dubbo-demo/springboot-dubbo-consumer/springboot-dubbo-consumer.iml" filepath="$PROJECT_DIR$/spring-boot-dubbo-demo/springboot-dubbo-consumer/springboot-dubbo-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-dubbo-demo/springboot-dubbo-provider/springboot-dubbo-provider.iml" filepath="$PROJECT_DIR$/spring-boot-dubbo-demo/springboot-dubbo-provider/springboot-dubbo-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-dubbo-demo/springboot-dubbo-zookeeper-consumer/springboot-dubbo-zookeeper-consumer.iml" filepath="$PROJECT_DIR$/spring-boot-dubbo-demo/springboot-dubbo-zookeeper-consumer/springboot-dubbo-zookeeper-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-dubbo-demo/springboot-dubbo-zookeeper-provider/springboot-dubbo-zookeeper-provider.iml" filepath="$PROJECT_DIR$/spring-boot-dubbo-demo/springboot-dubbo-zookeeper-provider/springboot-dubbo-zookeeper-provider.iml" />
+    </modules>
+  </component>
+</project>
