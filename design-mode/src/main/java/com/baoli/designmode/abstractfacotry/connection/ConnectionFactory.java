@@ -1,6 +1,5 @@
 package com.baoli.designmode.abstractfacotry.connection;
 
-import org.springframework.lang.Nullable;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -34,7 +33,7 @@ public abstract class ConnectionFactory extends AbstractConnectionFactory {
         return this.getConnectionFromDriver(username, password);
     }
 
-    protected Connection getConnectionFromDriver(@Nullable String username, @Nullable String password) throws SQLException {
+    protected Connection getConnectionFromDriver(String username, String password) throws SQLException {
         Properties properties = new Properties();
         Properties connectionProperties = this.getConnectionProperties();
         if (connectionProperties != null) {

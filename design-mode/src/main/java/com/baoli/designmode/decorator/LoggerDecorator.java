@@ -1,10 +1,11 @@
 package com.baoli.designmode.decorator;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * @description: 日志装饰器
+ * @description: ????????
  * @author: li baojian
  * @create: 2019/12/25 15:24
  */
@@ -17,11 +18,11 @@ public class LoggerDecorator implements Command {
 
     @Override
     public void execute() {
-        Log log = LogFactory.getLog(this.getClass());
-        log.info("日志装饰器开始");
-        System.out.println("日志装饰器开始");
+        Logger log = LoggerFactory.getLogger(this.getClass());
+        log.info("???????????");
+        System.out.println("???????????");
         this.command.execute();
-        System.out.println("日志装饰器结束");
-        log.info("日志装饰器结束");
+        System.out.println("????????????");
+        log.info("????????????");
     }
 }

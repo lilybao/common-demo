@@ -1,31 +1,32 @@
 package com.baoli.designmode.templateMethod;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Date;
 
 /**
- * @description: Ä£°å·½·¨ÖÐµÄÄ£°å³éÏóÀà
+ * @description: Ä£ï¿½å·½ï¿½ï¿½ï¿½Ðµï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author: li baojian
  * @create: 2019/12/25 14:59
  */
 public abstract class BaseCommand {
-   public static final Log log = LogFactory.getLog(BaseCommand.class);
+   public static final Logger log = LoggerFactory.getLogger(BaseCommand.class);
     public void execute(){
 
-        log.info("¿ªÊ¼");
-        //¿ªÊ¼ÐÔÄÜ·ÖÎö
+        log.info("ï¿½ï¿½Ê¼");
+        //ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ü·ï¿½ï¿½ï¿½
         System.out.println(new Date());
-        //¿ªÊ¼ÊÂÎñ
-        System.out.println("¿ªÊ¼ÊÂÎñ");
+        //ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½
+        System.out.println("ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½");
         doBusiness();
-        //½áÊøÊÂÎñ
-        System.out.println("Ìá½»ÊÂÎñ");
-        //ÐÔÄÜ·ÖÎö½áÊø
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        System.out.println("ï¿½á½»ï¿½ï¿½ï¿½ï¿½");
+        //ï¿½ï¿½ï¿½Ü·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         System.out.println(new Date());
-        log.info("½áÊø");
+        log.info("ï¿½ï¿½ï¿½ï¿½");
     }
-    //³éÏó·½·¨Ö®Àà±ØÐëÊµÏÖ
+    //ï¿½ï¿½ï¿½ó·½·ï¿½Ö®ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½
     protected abstract void doBusiness();
 }
