@@ -14,7 +14,7 @@ public class ThreadDemo1 {
     public static void main(String[] args) {
 
 //        for (int i = 0; i < 10; i++) {
-            testTicketsDemo();
+        testTicketsDemo();
 //        }
     }
 
@@ -23,8 +23,8 @@ public class ThreadDemo1 {
         CountDownLatch countDownLatch = new CountDownLatch(threadCount);
         ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
         ArrayList<Future> futures = new ArrayList<>();
-        for(int i=0;i<threadCount;i++){
-            MyTicketsThread myTicketsThread = new MyTicketsThread("窗口" + i , countDownLatch);
+        for (int i = 0; i < threadCount; i++) {
+            MyTicketsThread myTicketsThread = new MyTicketsThread("窗口" + i, countDownLatch);
             Future submit = executorService.submit(myTicketsThread);
             futures.add(submit);
         }
@@ -38,7 +38,7 @@ public class ThreadDemo1 {
         System.out.println("第一次模拟售票结束=================================");
         System.out.println("第一次模拟售票结果=================================");
         try {
-            for (Future f:
+            for (Future f :
                     futures) {
                 System.out.println(f.get().toString());
             }

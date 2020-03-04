@@ -15,6 +15,7 @@ public class MyCountThread extends Thread {
         this.counter = counter;
         this.countDownLatch = countDownLatch;
     }
+
     public void run() {
         for (int i = 0; i < 10000; i++) {
             counter.addCount();

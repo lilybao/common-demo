@@ -11,10 +11,12 @@ import java.util.concurrent.CountDownLatch;
 public class MyThread implements Runnable {
     private List<Object> list;
     private CountDownLatch countDownLatch;
+
     public MyThread(List<Object> list, CountDownLatch countDownLatch) {
         this.list = list;
         this.countDownLatch = countDownLatch;
     }
+
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
