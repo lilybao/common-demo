@@ -2,8 +2,8 @@ package com.baoli.designmode.strategy;
 
 /**
  * @description: 策略模式测试
- * 通过设置不同的策略来完成某件事情
- * 策略可以进行更换  根据需要
+ * 通过设置不同的策略（算法）来完成某件事情
+ * 策略可以进行更换  根据需要不同的算法
  * @author: li baojian
  * @create: 2020/01/18 17:15
  */

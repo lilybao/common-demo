@@ -2,6 +2,7 @@ package com.baoli.designmode.adapter;
 
 /**
  * @description: the interface of Student learn  with sample method of the interface of Teacher teach
+ * 学生的
  * @author: li baojian
  * @create: 2020/01/17 17:26
  */
