@@ -7,6 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * 排它锁中  公平锁和非公平锁
  * 非公平锁效率高于公平锁
+ * 排它锁下使用公平锁和非公平锁两种策略的效率问题
  */
 public class ReentrantLockDemo {
 
