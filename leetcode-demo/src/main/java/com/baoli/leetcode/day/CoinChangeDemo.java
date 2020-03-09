@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 /**
  * 零钱兑换
+ * 动态规划的关键有一个最优的子结构性质，然后 自上而下 或者自下而上
  */
 public class CoinChangeDemo {
     public static void main(String[] args) {
