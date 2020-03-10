@@ -10,7 +10,7 @@ public class FooDemo {
         ExecutorService executorService = Executors.newCachedThreadPool();
         Executors.newFixedThreadPool(5);
         Executors.newScheduledThreadPool(5);
-        Executors.newSingleThreadExecutor()
+        Executors.newSingleThreadExecutor();
         Foo foo = new Foo();
         ThreadOne threadOne = new ThreadOne();
         ThreadTwo threadTwo = new ThreadTwo();
