@@ -22,9 +22,11 @@ public class MaxDivisor {
             int min = Math.min(str1.length(), str2.length());
             String ss = str1.length() == min ? str1 : str2;
             for (int i = min; i > 0; i--) {
-                s = ss.substring(0, i);
-                if (str1.replace(s, "").equals("") && str2.replace(s, "").equals("")) {
-                    return s;
+                if (str1.length() % i == 0 && str2.length() % i == 0) {
+                    s = ss.substring(0, i);
+                    if (str1.replace(s, "").equals("") && str2.replace(s, "").equals("")) {
+                        return s;
+                    }
                 }
             }
             return "";
