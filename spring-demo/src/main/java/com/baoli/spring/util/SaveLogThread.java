@@ -1,6 +1,8 @@
 package com.baoli.spring.util;
 
+import com.baoli.spring.api.DemoService;
 import com.baoli.spring.entity.SysLog;
+import com.baoli.spring.service.mapper.DemoMapper;
 
 import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -38,7 +40,8 @@ public class SaveLogThread extends Thread {
     public void run() {
         while (!queue.isEmpty()) {
             SysLog sysLog = queue.poll();
-            System.out.println("主线程"+Thread.currentThread().getName() +"子线程"+instance.get().getName()+ "保存syslog" + sysLog.toString());
+            DemoMapper demoMapper = SpringUtil.getBean(DemoMapper.class);
+            demoMapper.insert(sysLog);
             queue.remove(sysLog);
         }
     }

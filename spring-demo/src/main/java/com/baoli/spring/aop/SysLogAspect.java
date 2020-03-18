@@ -25,6 +25,8 @@ import java.lang.reflect.Method;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Random;
+import java.util.UUID;
 
 /**
  * @program: common-demo
@@ -81,6 +83,7 @@ public class SysLogAspect {
 
                 }
                 SysLog sysLog = new SysLog();
+                sysLog.setUuid(UUID.randomUUID().toString());
                 sysLog.setLogTitle(log.logTitle());
                 sysLog.setLogType(log.logType());
                 sysLog.setRequestParams(params);

@@ -1,6 +1,7 @@
 package com.baoli.spring.entity;
 
 import com.baoli.spring.enums.LogTypeEnum;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.util.Date;
@@ -12,8 +13,10 @@ import java.util.Date;
  * @create: 2020-03-17 14:44
  */
 @Data
-public class SysLog {
+@TableName("syslog")
+public class SysLog  {
     private String logTitle;
+    private String uuid;
     private LogTypeEnum logType;
     private String requestParams;
     private Date startTime;

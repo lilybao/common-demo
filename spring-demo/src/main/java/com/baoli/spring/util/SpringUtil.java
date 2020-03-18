@@ -3,6 +3,7 @@ package com.baoli.spring.util;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
 /**
  * @program: common-demo
@@ -10,6 +11,7 @@ import org.springframework.context.ApplicationContextAware;
  * @author: li baojian
  * @create: 2020-03-17 11:05
  */
+@Component
 public class SpringUtil implements ApplicationContextAware {
     private static ApplicationContext applicationContext;
 
