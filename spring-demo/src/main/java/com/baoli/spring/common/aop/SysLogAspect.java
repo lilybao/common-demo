@@ -1,31 +1,24 @@
-package com.baoli.spring.aop;
+package com.baoli.spring.common.aop;
 
 import com.alibaba.fastjson.JSONObject;
-import com.baoli.spring.annotation.Log;
+import com.baoli.spring.common.annotation.Log;
 import com.baoli.spring.entity.SysLog;
-import com.baoli.spring.util.SaveLogThread;
-import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.baoli.spring.common.util.SaveLogThread;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
-import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Random;
 import java.util.UUID;
 
 /**
@@ -83,13 +76,15 @@ public class SysLogAspect {
 
                 }
                 SysLog sysLog = new SysLog();
-                sysLog.setUuid(UUID.randomUUID().toString());
                 sysLog.setLogTitle(log.logTitle());
                 sysLog.setLogType(log.logType());
                 sysLog.setRequestParams(params);
                 sysLog.setTime(end-start);
                 sysLog.setStartTime(new Date(start));
                 sysLog.setEndTime(new Date(end));
+                if(null !=newThrowable){
+                    sysLog.setException(newThrowable.getMessage());
+                }
                 SaveLogThread saveLogThread = SaveLogThread.getInstance();
                 saveLogThread.queue.offer(sysLog);
                 if(!saveLogThread.isAlive()){

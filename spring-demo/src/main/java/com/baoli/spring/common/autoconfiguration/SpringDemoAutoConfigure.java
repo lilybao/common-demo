@@ -1,4 +1,4 @@
-package com.baoli.spring.autoconfiguration;
+package com.baoli.spring.common.autoconfiguration;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.ComponentScan;

@@ -1,8 +1,12 @@
 package com.baoli.spring.api;
 
+import com.baoli.spring.common.base.service.BaseService;
 import com.baoli.spring.entity.SysLog;
-import com.baomidou.mybatisplus.extension.service.IService;
 
-public interface DemoService extends IService {
-    void save(SysLog sysLog);
+import java.util.List;
+
+public interface DemoService extends BaseService<SysLog> {
+    void saveSysLog(SysLog sysLog);
+
+    List<SysLog> find(String name);
 }

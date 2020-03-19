@@ -1,12 +1,9 @@
-package com.baoli.spring.util;
+package com.baoli.spring.common.util;
 
-import com.baoli.spring.api.DemoService;
 import com.baoli.spring.entity.SysLog;
 import com.baoli.spring.service.mapper.DemoMapper;
 
 import java.util.Queue;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.LinkedTransferQueue;
 import java.util.concurrent.atomic.AtomicReference;
 
