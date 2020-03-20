@@ -1,4 +1,4 @@
-package com.baoli.spring.util;
+package com.baoli.spring.common.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

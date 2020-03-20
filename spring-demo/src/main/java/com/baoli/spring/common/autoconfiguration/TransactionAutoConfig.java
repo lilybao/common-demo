@@ -1,4 +1,4 @@
-package com.baoli.spring.autoconfiguration;
+package com.baoli.spring.common.autoconfiguration;
 
 import org.springframework.aop.Advisor;
 import org.springframework.aop.aspectj.AspectJExpressionPointcut;
@@ -25,7 +25,7 @@ import java.util.Collections;
 @Configuration
 @AutoConfigureOrder(-100)
 public class TransactionAutoConfig {
-    public static final String AOP_POINTCUT_EXPRESSION="execution(public * com.baoli.spring.controller.*.*(..))";
+    public static final String AOP_POINTCUT_EXPRESSION="execution(public * com.baoli.spring.common.base.service.BaseService+.*(..))";
 
     @Autowired
     private PlatformTransactionManager platformTransactionManager;
@@ -50,6 +50,7 @@ public class TransactionAutoConfig {
         readOnly.setReadOnly(true);
         NameMatchTransactionAttributeSource source = new NameMatchTransactionAttributeSource();
         source.addTransactionalMethod("add*",requiredTx);
+        source.addTransactionalMethod("save*",requiredTx);
         source.addTransactionalMethod("delete*",requiredTx);
         source.addTransactionalMethod("update*",requiredTx);
 

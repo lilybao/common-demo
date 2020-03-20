@@ -1,6 +1,7 @@
 package com.baoli.spring.entity;
 
-import com.baoli.spring.enums.LogTypeEnum;
+import com.baoli.spring.common.base.model.BaseModel;
+import com.baoli.spring.common.enums.LogTypeEnum;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -14,12 +15,13 @@ import java.util.Date;
  */
 @Data
 @TableName("syslog")
-public class SysLog  {
+public class SysLog  extends BaseModel<SysLog> {
     private String logTitle;
-    private String uuid;
     private LogTypeEnum logType;
     private String requestParams;
+    private String LoginName;
     private Date startTime;
     private Date endTime;
     private Long time;
+    private String exception;
 }

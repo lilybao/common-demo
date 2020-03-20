@@ -1,6 +1,6 @@
-package com.baoli.spring.annotation;
+package com.baoli.spring.common.annotation;
 
-import com.baoli.spring.enums.LogTypeEnum;
+import com.baoli.spring.common.enums.LogTypeEnum;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

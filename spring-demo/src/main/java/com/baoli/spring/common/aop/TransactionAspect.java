@@ -1,4 +1,4 @@
-package com.baoli.spring.aop;
+package com.baoli.spring.common.aop;
 
 /**
  * @program: common-demo

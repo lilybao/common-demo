@@ -1,4 +1,4 @@
-package com.baoli.spring.enums;
+package com.baoli.spring.common.enums;
 
 public enum LogTypeEnum {
     SYSTEM("系统日志"),
