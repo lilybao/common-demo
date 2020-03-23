@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    primary:
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/test?serverTimezone=Asia/Shanghai&useSSL=false&nullCatalogMeansCurrent=true
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    second:
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/test?serverTimezone=Asia/Shanghai&useSSL=false&nullCatalogMeansCurrent=true
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
