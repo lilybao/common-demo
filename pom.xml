@@ -25,6 +25,7 @@
         <module>spring-boot-mybatisplus-demo</module>
         <module>sql-demo</module>
         <module>spring-elasticsearch</module>
+        <module>spring-multi-datasource</module>
     </modules>
     <!--对依赖的版本号进行管理-->
     <dependencyManagement>

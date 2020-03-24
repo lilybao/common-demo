@@ -1,4 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.baoli.spring.common.autoconfiguration.SpringDemoAutoConfigure,\
 com.baoli.spring.common.autoconfiguration.TransactionAutoConfig,\
-com.baoli.spring.common.autoconfiguration.SwaggerAutoConfigure
+com.baoli.spring.common.autoconfiguration.SwaggerAutoConfigure,\
+com.baoli.spring.common.autoconfiguration.RedisAutoConfigure

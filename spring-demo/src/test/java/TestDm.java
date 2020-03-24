@@ -15,7 +15,7 @@ public class TestDm {
         try {
             PreparedStatement pstmt;
             String driver = "dm.jdbc.driver.DmDriver";// "com.ibm.db2.jcc.DB2Driver";
-            String url = "jdbc:dm://192.168.0.199:12345/AUDITLOCAL";//"jdbc:dm://10.70.0.4:12345/AUDITLOCAL";// "jdbc:db2://192.168.0.168:50001/";
+            String url = "jdbc:dm://192.168.0.195:12345/AUDITLOCAL";//"jdbc:dm://10.70.0.4:12345/AUDITLOCAL";// "jdbc:db2://192.168.0.168:50001/";
             Connection conn = null;
             ResultSet rs;
             //加载驱动
@@ -33,13 +33,12 @@ public class TestDm {
 //                    "   where DOCMANAGE.DOC_DEAL_DOCUMENT.TITLE LIKE '%县长%' and DOCMANAGE.DOC_DEAL_CONTENT.OFFICIALNAME is not null\n" +
 //                    "  ";
 
-            String sql="select DOCMANAGE.DOC_DEAL_DOCUMENT.TITLE  OFFICIALNAME,DOCMANAGE.DOC_DEAL_CONTENT.OFFICIAL,DOCMANAGE.DOC_DEAL_CONTENT.DOCUUID from DOCMANAGE.DOC_DEAL_DOCUMENT left join DOCMANAGE.DOC_DEAL_CONTENT ON \n" +
-                    "                     DOCMANAGE.DOC_DEAL_DOCUMENT.DOCUUID=DOCMANAGE.DOC_DEAL_CONTENT.DOCUUID\n" +
-                    "                       where DOCMANAGE.DOC_DEAL_DOCUMENT.TITLE LIKE '%财政局%' and DOCMANAGE.DOC_DEAL_CONTENT.OFFICIALNAME is not null";
+//            String sql="select DOCMANAGE.DOC_DEAL_DOCUMENT.TITLE  OFFICIALNAME,DOCMANAGE.DOC_DEAL_CONTENT.OFFICIAL,DOCMANAGE.DOC_DEAL_CONTENT.DOCUUID from DOCMANAGE.DOC_DEAL_DOCUMENT left join DOCMANAGE.DOC_DEAL_CONTENT ON \n" +
+//                    "                     DOCMANAGE.DOC_DEAL_DOCUMENT.DOCUUID=DOCMANAGE.DOC_DEAL_CONTENT.DOCUUID\n" +
+//                    "                       where DOCMANAGE.DOC_DEAL_DOCUMENT.TITLE LIKE '%县长%' and DOCMANAGE.DOC_DEAL_CONTENT.OFFICIALNAME is not null";
 
 
-            String sql1 = "select * from AUDITRESULT.VIEW_DOC_DEAL_CONTENT WHERE DOCUUID=\n" +
-                    "'75141151-15a636e4a98-f528764d624db129b32c21fbca0cb8d6'";
+            String sql = "select * from DOCMANAGE.DOC_DEAL_CONTENT where OFFICIALNAME like '%经济责任审计工作方案%'";
             //获得连接
             conn = DriverManager.getConnection(url, "DOCMANAGE", "pass1009");
             pstmt = conn.prepareStatement(sql);
@@ -60,7 +59,7 @@ public class TestDm {
                 Resport resport1 = list.get(i);
                 try {
                     inputStream = resport1.getContent().getBinaryStream();
-                    File file = new File("d://财政局//" + resport1.getName() + ".doc");
+                    File file = new File("d://审计对象//" + resport1.getName() + ".doc");
                     if(!file.exists()){
                         fileOutputStream = new FileOutputStream(file);
                         int len = 0;
