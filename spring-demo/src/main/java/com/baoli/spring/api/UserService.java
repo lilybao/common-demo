@@ -5,4 +5,10 @@ import com.baoli.spring.entity.User;
 
 public interface UserService extends BaseService<User> {
     User updateUser(User user);
+
+    User saveUser(User user);
+
+    void deleteUser(String uuid);
+
+    User getUser(String uuid);
 }

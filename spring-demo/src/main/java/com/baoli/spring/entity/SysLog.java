@@ -2,8 +2,9 @@ package com.baoli.spring.entity;
 
 import com.baoli.spring.common.base.model.BaseModel;
 import com.baoli.spring.common.enums.LogTypeEnum;
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 import java.util.Date;
 
@@ -14,8 +15,10 @@ import java.util.Date;
  * @create: 2020-03-17 14:44
  */
 @Data
-@TableName("syslog")
-public class SysLog  extends BaseModel<SysLog> {
+@EqualsAndHashCode(callSuper = true)
+@Accessors(chain = true)
+public class SysLog extends BaseModel<SysLog> {
+    private static final long serialVersionUID = 1L;
     private String logTitle;
     private LogTypeEnum logType;
     private String requestParams;

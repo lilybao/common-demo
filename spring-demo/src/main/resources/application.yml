@@ -1,4 +1,12 @@
 spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 0
+    lettuce:
+      pool:
+        max-active: 100 #最大连接数
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/test?serverTimezone=Asia/Shanghai&useSSL=false&nullCatalogMeansCurrent=true
     password: root
@@ -16,6 +24,8 @@ spring:
       login-timeout: 5
   application:
     name: springDemo
+  cache:
+    type: redis
 server:
   port: 8080
 
