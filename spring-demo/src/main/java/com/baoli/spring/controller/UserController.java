@@ -2,6 +2,7 @@ package com.baoli.spring.controller;
 
 import com.baoli.spring.api.UserService;
 import com.baoli.spring.common.base.controller.BaseController;
+import com.baoli.spring.common.util.RedisTemplateUtil;
 import com.baoli.spring.common.util.ResultData;
 import com.baoli.spring.entity.User;
 import io.swagger.annotations.Api;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * @program: common-demo
@@ -35,19 +37,27 @@ public class UserController extends BaseController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private RedisTemplateUtil redisTemplateUtil;
+
 
     @RequestMapping("/test")
     @ResponseStatus(HttpStatus.CREATED)
     public ResultData test() {
-        User user1 = new User();
-        user1.setAge("12");
-        user1.setName("lisi");
-        redisTemplate.opsForValue().set("userKey",user1);
-        redisTemplate.opsForHash().putIfAbsent("123","1","e");
-        redisTemplate.opsForHash().putIfAbsent("123","2","e");
-        User user = (User) redisTemplate.opsForValue().get("userKey");
-        Map<Object, Object> map = redisTemplate.opsForHash().entries("123");
-        System.out.println(user.toString());
+        User user = new User();
+        String uuid = UUID.randomUUID().toString();
+        user.setUuid(uuid);
+        user.setAge("28");
+        user.setName("李四");
+        redisTemplate.opsForValue().set(uuid,user);
+        userService.save(user);
+        return new ResultData(user);
+    }
+
+    @RequestMapping("/getId/{uuid}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResultData getId(@PathVariable("uuid")String uuid) {
+        User user = (User)  redisTemplateUtil.getUserValue(uuid);
         return new ResultData(user);
     }
 

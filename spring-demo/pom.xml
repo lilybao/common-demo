@@ -14,10 +14,6 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <dependency>
@@ -29,32 +25,24 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.9</version>
         </dependency>
+        <!--lombok表达式-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.1.0</version>
-        </dependency>
-        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <!--mybatis-plus 集成spring-boot-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.1.0</version>
         </dependency>
-        <dependency>
-            <groupId>dm-jdbc</groupId>
-            <artifactId>dm-jdbc</artifactId>
-            <version>1.0</version>
-            <scope>test</scope>
-        </dependency>
+        <!--达蒙数据库驱动-->
         <dependency>
             <groupId>dm.jdbc</groupId>
             <artifactId>DmDriver</artifactId>
@@ -65,6 +53,7 @@
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
         </dependency>
+        <!--swagger ui 相关-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
@@ -75,17 +64,19 @@
             <artifactId>springfox-swagger2</artifactId>
             <version>2.9.2</version>
         </dependency>
-        <!--redis相关依赖-->
+        <!--redis集成spring-boot-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
             <version>2.1.5.RELEASE</version>
         </dependency>
+        <!--spring session导入  用作session共享 需在配置文件中配置 spring.servlet.session.timeout:  80ms-->
         <!-- <dependency>
              <groupId>org.springframework.session</groupId>
              <artifactId>spring-session-data-redis</artifactId>
              <version>2.0.2.RELEASE</version>
          </dependency>-->
+        <!--redis的的连接池-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
