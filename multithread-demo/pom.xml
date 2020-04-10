@@ -16,5 +16,10 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.sargeraswang.util</groupId>
+            <artifactId>excel-util</artifactId>
+            <version>1.2.1</version>
+        </dependency>
     </dependencies>
 </project>
