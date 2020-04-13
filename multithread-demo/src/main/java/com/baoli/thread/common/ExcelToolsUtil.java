@@ -16,6 +16,36 @@ import java.util.*;
 public class ExcelToolsUtil implements ExcelFileHandler {
 
 
+    //去重
+    public  List<Map<String,Object>>   removeDuplicates() throws FileNotFoundException {
+
+        File file1 = new File("E:\\123.xlsx");
+        InputStream inputStream = new FileInputStream(file1);
+        ExcelLogs logs = new ExcelLogs();
+        Collection<Map> importExcel = ExcelUtil.importExcel(Map.class, inputStream, "yyyy/MM/dd HH:mm:ss", logs, 0);
+        ArrayList<Map<String, Object>> maps = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<>();
+        HashMap<String, Integer> map = new HashMap<>();
+        int i=0;
+        for (Map m : importExcel) {
+            String f = m.get("目标性指标（单项指标）").toString().trim();
+
+
+            if(i>488&&list.contains(f)){
+                i++;
+                continue;
+
+            }else {
+                list.add(f);
+                maps.add(m);
+            }
+            i++;
+
+        }
+        return maps;
+    }
+
+
     public  List<Map<String,Object>>  getList() throws FileNotFoundException {
 
         File file1 = new File("E:\\123.xlsx");

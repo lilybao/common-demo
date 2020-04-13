@@ -16,10 +16,13 @@ import java.util.Map;
 public class ExcelDemo {
     public static void main(String[] args) {
         ExcelToolsUtil excelToolsUtil = new ExcelToolsUtil();
+
         try {
+
             File file = new File("E:\\333.xls");
             FileOutputStream outputStream = new FileOutputStream(file);
-            List<Map<String, Object>> list = excelToolsUtil.getList();
+            List<Map<String, Object>> list = excelToolsUtil.removeDuplicates();
+//            List<Map<String, Object>> list = excelToolsUtil.getList();
             excelToolsUtil.exportExcelFile(list,outputStream);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
