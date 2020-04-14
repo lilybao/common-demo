@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @program: common-demo
@@ -16,7 +17,8 @@ import java.util.Map;
 public class ExcelDemo {
     public static void main(String[] args) {
         ExcelToolsUtil excelToolsUtil = new ExcelToolsUtil();
-
+        ConcurrentHashMap<Object, Object> map = new ConcurrentHashMap<>();
+        map.put("","");
         try {
 
             File file = new File("E:\\333.xls");
