@@ -1,5 +1,8 @@
 package com.baoli.leetcode.day;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  * @program: common-demo
  * @description: 打印奇数和偶数
@@ -10,15 +13,19 @@ public class PrintDemo {
     public static boolean state = true;
 
     public static void main(String[] args) {
-
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        Counter counter = new Counter();
+        executorService.submit(new Thread1Demo(counter));
+        executorService.submit(new Thread2Demo(counter));
+        executorService.shutdown();
     }
 
-    static class Counter{
-        int val;
+    static class Counter {
+        int val = 1;
     }
 
-    static class Thread1Demo extends Thread {
-         Counter counter;
+    static class Thread1Demo implements Runnable {
+        Counter counter;
 
         public Thread1Demo(Counter counter) {
             this.counter = counter;
@@ -26,42 +33,55 @@ public class PrintDemo {
 
         @Override
         public void run() {
-            for (int i = 1; i <= 100; i++) {
-                if (i % 2 == 0) {
-                    System.out.println(i);
-                } else {
-                    try {
-                        counter.wait();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+            while (counter.val <= 100) {
+                synchronized (counter) {
+                    if (counter.val % 2 == 0) {
+                        System.out.println(counter.val++);
+                        try {
+                            counter.notify();
+                            counter.wait();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                    } else {
+                        try {
+                            System.out.println("偶数线程等待");
+                            counter.wait();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
+
                 }
+
             }
         }
     }
 
-    static class Thread2Demo extends Thread {
-        private static Thread2Demo instance = null;
+    static class Thread2Demo implements Runnable {
+        Counter counter;
 
-        public static Thread2Demo getInstance() {
-            if (instance == null) {
-                instance = new Thread2Demo();
-            }
-            return instance;
+        public Thread2Demo(Counter counter) {
+            this.counter = counter;
         }
 
         @Override
         public void run() {
-            for (int i = 1; i <= 100; i++) {
-                if (i % 2 == 1) {
-                    System.out.println(i);
-                } else {
-                    try {
-                        getInstance().wait();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+            while (counter.val <= 100) {
+                synchronized (counter) {
+                    if (counter.val % 2 == 1) {
+                        System.out.println(counter.val++);
+                        try {
+                            counter.notify();
+                            counter.wait();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
                     }
                 }
+
             }
         }
     }
