@@ -38,13 +38,20 @@ public class ReservoirDemo {
 
     }
 
+    @Test
+    public void test(){
+        testMulti();
+        testSingle();
+
+    }
+
     //分布式测试
     @Test
     public void testMulti() {
         //样本长度
-        int len = 1000;
+        int len = 20000;
         //抽样长度
-        int dataLength = 10000;
+        int dataLength = 100000;
         //蓄水池长度
         int reservoirLength = 10;
         //每个数字被抽取到的次数
@@ -61,15 +68,16 @@ public class ReservoirDemo {
                 frequency[i1] += 1;
             }
         }
-        printReservoirResultFrequency(frequency);
+       long time= System.currentTimeMillis()-start;
+        printReservoirResultFrequency(frequency,time);
 
     }
 
     //单机版测试
     @Test
-    public void test() {
+    public void testSingle() {
         //样本长度
-        int len = 1000;
+        int len = 20000;
         //抽样长度
         int dataLength = 100000;
         //蓄水池长度
@@ -89,18 +97,19 @@ public class ReservoirDemo {
                 frequency[i1] += 1;
             }
         }
-        printReservoirResultFrequency(frequency);
+        long time=System.currentTimeMillis()-start;
+        printReservoirResultFrequency(frequency,time);
 
     }
 
-    private void printReservoirResultFrequency(int[] frequency) {
+    private void printReservoirResultFrequency(int[] frequency,long time) {
         //期望 方差 标准差
         double avg = 0;
         double var = 0;
         double sigma = 0;
         for (int i = 0; i < frequency.length; i++) {
-            if (i % 10 == 9) System.out.println();
-            System.out.print(frequency[i] + ", ");
+//            if (i % 10 == 9) System.out.println();
+//            System.out.print(frequency[i] + ", ");
             avg += ((double) (frequency[i]) / frequency.length);
             var += ((double) (frequency[i] * frequency[i]) / frequency.length);
         }
@@ -110,6 +119,7 @@ public class ReservoirDemo {
         System.out.println("average:  " + avg);
         System.out.println("variance:  " + var);
         System.out.println("standard deviation:  " + sigma);
+        System.out.println("spend time:  " + time);
 
     }
 
