@@ -26,7 +26,7 @@ public class ShortestPathDemo {
         for (String node:nodes){
             NodeExtra nodeExtra = new NodeExtra();
             nodeExtra.nodeName=node;
-            Integer value = graph.edgeValueOrDefault(node, startNode, Integer.MAX_VALUE);
+            Integer value = graph.edgeValueOrDefault(startNode, node, Integer.MAX_VALUE);
             nodeExtra.distance=value;
             nodeExtra.visited=false;
             if(value<Integer.MAX_VALUE){
@@ -109,7 +109,6 @@ public class ShortestPathDemo {
         public String preNode;
         //路径的所有途经点
         public String path;
-
 
     }
 }
