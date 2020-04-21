@@ -38,7 +38,10 @@ public class TestDm {
 //                    "                       where DOCMANAGE.DOC_DEAL_DOCUMENT.TITLE LIKE '%县长%' and DOCMANAGE.DOC_DEAL_CONTENT.OFFICIALNAME is not null";
 
 
-            String sql = "select * from DOCMANAGE.DOC_DEAL_CONTENT where OFFICIALNAME like '%经济责任审计工作方案%'";
+//            String sql = "select * from DOCMANAGE.DOC_DEAL_CONTENT where OFFICIALNAME like '%经济责任审计工作方案%'";
+//            String sql = "select * from DOCMANAGE.DOC_DEAL_CONTENT where OFFICIALNAME like '%河南省省级预算单位%'";
+//            String sql = "select * from DOCMANAGE.DOC_TRAN_CONTENT where OFFICIALNAME like '%河南省省级预算单位%'";
+            String sql = "select * from DOCMANAGE.DOC_READ_DOCCONTENT where DOC_FILENAME like '%河南省省级预算单位%'";
             //获得连接
             conn = DriverManager.getConnection(url, "DOCMANAGE", "pass1009");
             pstmt = conn.prepareStatement(sql);
