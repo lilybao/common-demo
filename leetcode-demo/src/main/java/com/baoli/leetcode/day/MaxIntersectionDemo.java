@@ -6,7 +6,7 @@ package com.baoli.leetcode.day;
  * @author: li baojian
  * @create: 2020-04-12 21:39
  */
-public class IntersectionDemo {
+public class MaxIntersectionDemo {
     public static void main(String[] args) {
         int [] start={0,0};
         int [] end={3,3};

@@ -1,6 +1,5 @@
 package com.baoli.designmode.common;
 
-import jdk.nashorn.internal.runtime.options.Option;
 import lombok.Data;
 import org.junit.Assert;
 import org.junit.Test;
