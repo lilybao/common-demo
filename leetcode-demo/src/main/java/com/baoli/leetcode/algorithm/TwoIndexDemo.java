@@ -36,7 +36,7 @@ public class TwoIndexDemo {
 
     /**
      * @param nums
-     * @param target 二分查找
+     * @param target 二分查找   时间复杂度  O（log n）  空间复杂度的 O（1）
      * @return
      */
     public int search1(int[] nums, int target) {
@@ -48,14 +48,14 @@ public class TwoIndexDemo {
             if (target == nums[mid]) {
                 return mid;
             }
-            if (nums[0] < nums[mid]) {
+            if (nums[0] <= nums[mid]) {
                 if (target >=nums[0] && target < nums[mid]) {
                     rightIndex = mid - 1;
                 } else {
                     leftIndex = mid + 1;
                 }
             } else {
-                if (target >=nums[mid] && target <= nums[nums.length - 1]) {
+                if (target >nums[mid] && target <= nums[nums.length - 1]) {
                     leftIndex = mid + 1;
                 } else {
                     rightIndex = mid - 1;
@@ -106,5 +106,69 @@ public class TwoIndexDemo {
             }
         }
         return arr;
+    }
+
+    /**
+     * 二分查找  数组 中是否包含某个元素
+     */
+    @Test
+    public void test2(){
+        int[] nums={1,23,54,43,67,86,55};
+        fastSort(nums,0,nums.length-1);
+        int target=33;
+       int index= twoSplitSearch(nums,target);
+        System.out.println(index);
+        System.out.println(nums);
+    }
+
+    /**
+     * 二分查找  双指针
+     * @param nums
+     * @param target
+     * @return
+     */
+    private int twoSplitSearch(int[] nums, int target) {
+        int left=0;
+        int right=nums.length-1;
+        int mid;
+        while (left<=right){
+             mid=(left+right)/2;
+            if(nums[mid]==target){
+                return mid;
+            }
+            if(nums[left]<=target&&target<nums[mid]){
+                right=mid-1;
+            }else{
+                left=mid+1;
+            }
+        }
+        return -1;
+    }
+
+    private void fastSort(int[] nums, int left, int right) {
+       if(left<right){
+          int mid= particition(nums,left,right);
+          fastSort(nums,left,mid-1);
+          fastSort(nums,mid+1,right);
+       }
+    }
+
+    private int particition(int[] nums, int left, int right) {
+        int i=left;
+        int j=right+1;
+        int mid=nums[left];
+        while (true){
+            while (--j>i&&nums[j]>mid);
+            while (++i<j&&nums[i]<mid);
+            if(i>=j){
+                break;
+            }
+            int tmp=nums[i];
+            nums[i]=nums[j];
+            nums[j]=tmp;
+        }
+        nums[left]=nums[j];
+        nums[j]=mid;
+        return j;
     }
 }
