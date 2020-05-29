@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baoli.dynamicsource.service.mapper.StudentMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.baoli.dynamicsource.model.Student">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="age" property="age" />
+        <result column="score" property="score" />
+    </resultMap>
+    <select id="selector" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+            select id,name,age,score from student where id=#{id,jdbcType=INTEGER}
+    </select>
+    <update id="update" parameterType="com.baoli.dynamicsource.model.Student">
+        update student set name=#{name,jdbcType=VARCHAR},age=#{age,jdbcType=INTEGER},score=#{score,jdbcType=INTEGER} where id=#{id,jdbcType=INTEGER}
+    </update>
+
+</mapper>

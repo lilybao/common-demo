@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    master:
+      url: jdbc:mysql://127.0.0.1:3306/user?serverTimezone=Asia/Shanghai&useSSL=false&nullCatalogMeansCurrent=true
+      username: root
+      password: root
+    slave:
+      url: jdbc:mysql://127.0.0.1:3306/user1?serverTimezone=Asia/Shanghai&useSSL=false&nullCatalogMeansCurrent=true
+      username: root
+      password: root
